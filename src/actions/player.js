@@ -41,7 +41,6 @@ export function changeSong(changeType) {
         const {currentSongIndex, selectedPlaylists} = player;
         const currentPlaylist = selectedPlaylists[selectedPlaylists.length - 1];
         let newSongIndex;
-
         if (changeType === CHANGE_TYPES.NEXT) {
             newSongIndex = currentSongIndex + 1;
         } else if (changeType === CHANGE_TYPES.PREV) {
@@ -61,7 +60,6 @@ export function changeSong(changeType) {
 export function playSong(playlist, songIndex) {
     return (dispatch, getState) => {
         dispatch(changeCurrentTime(0));
-
         const {player} = getState();
         const {selectedPlaylists} = player;
         const len = selectedPlaylists.length;
